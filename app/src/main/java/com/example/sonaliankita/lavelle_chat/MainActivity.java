@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     EditText editText;
     List<ChatMode> list_chat= new ArrayList<>();
     FloatingActionButton btn_send_message;
+  //  private List<ChatMode>[] params;
 
 
     @Override
@@ -54,9 +55,8 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         protected String doInBackground(List<ChatMode>[] lists) {
-            String url = String.format("http://sandbox.api.simsimi.com/request.p?key=%s&lc=en&ft=l.0&text=%s","9ccfb3bb-9e19-4139-a8e9-e29105fe06f9",getString(R.string.simsimi_api),text);
-            List<ChatMode>[] params = new List[0];
-            modes= params[0];
+            String url = String.format("http://sandbox.api.simsimi.com/request.p?key=%s&lc=en&ft=1.0&text=%s",getString(R.string.simsimi_api),text);
+//            modes= params[0];
             HttpDataHandler httpDataHandler= new HttpDataHandler();
             stream= httpDataHandler.GetHttpDataHandler(url);
             return stream;
